@@ -5,12 +5,12 @@ export const PosterFooter = () => {
   return (
     <footer className="mt-8 bg-gradient-to-b from-[#23120A] to-[#170C06] text-white border-t-2 border-[#D97706] shadow-2xl">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-10 pb-8">
-        
+
         {/* Malluz Cafe Logo in Footer */}
         <div className="flex justify-center mb-4">
-          <img 
-            src="/malluz-cafe-logo.png" 
-            alt="Malluz Cafe" 
+          <img
+            src="/malluz-cafe-logo.png"
+            alt="Malluz Cafe"
             className="h-12 sm:h-14 w-auto object-contain drop-shadow-md"
             width="200"
             height="100"
@@ -33,16 +33,16 @@ export const PosterFooter = () => {
           </p>
         </div>
 
-        {/* 3 Outlets Row (Horizontal on Desktop, stacked/neat on mobile) */}
-        <div className="max-w-2xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8 pb-8 text-[#FFF8EE]">
-          
+        {/* Outlets List */}
+        <div className="max-w-4xl mx-auto flex flex-wrap items-center justify-center gap-x-4 gap-y-2.5 text-center pb-8 text-[#FFF8EE]">
+
           {/* Outlet 1: Jeppu */}
           <div className="flex items-center gap-2 group">
             <div className="w-7 h-7 rounded-full bg-[#3B190B] border border-[#E09F1F]/40 flex items-center justify-center shrink-0 shadow-sm">
-              <MapPin className="w-3.5 h-3.5 text-[#E09F1F]" aria-hidden="true" />
+              <MapPin className="w-3.5 h-3.5 text-[#E09F1F] shrink-0" aria-hidden="true" />
             </div>
             <span className="font-sans font-bold text-sm sm:text-base tracking-wide text-[#FFF8EE] group-hover:text-[#F5C451] transition-colors">
-              Jeppu
+              Opposite Jeppu Seminar, Jeppu
             </span>
           </div>
 
@@ -54,10 +54,10 @@ export const PosterFooter = () => {
           {/* Outlet 2: Attavar */}
           <div className="flex items-center gap-2 group">
             <div className="w-7 h-7 rounded-full bg-[#3B190B] border border-[#E09F1F]/40 flex items-center justify-center shrink-0 shadow-sm">
-              <MapPin className="w-3.5 h-3.5 text-[#E09F1F]" aria-hidden="true" />
+              <MapPin className="w-3.5 h-3.5 text-[#E09F1F] shrink-0" aria-hidden="true" />
             </div>
             <span className="font-sans font-bold text-sm sm:text-base tracking-wide text-[#FFF8EE] group-hover:text-[#F5C451] transition-colors">
-              Attavar
+              Opposite KMC Central Lab,Attavar
             </span>
           </div>
 
@@ -66,13 +66,13 @@ export const PosterFooter = () => {
             |
           </span>
 
-          {/* Outlet 3: Morgans Gate */}
+          {/* Outlet 3: Opposite palamar garden Mangaloore club road */}
           <div className="flex items-center gap-2 group">
             <div className="w-7 h-7 rounded-full bg-[#3B190B] border border-[#E09F1F]/40 flex items-center justify-center shrink-0 shadow-sm">
-              <MapPin className="w-3.5 h-3.5 text-[#E09F1F]" aria-hidden="true" />
+              <MapPin className="w-3.5 h-3.5 text-[#E09F1F] shrink-0" aria-hidden="true" />
             </div>
-            <span className="font-sans font-bold text-sm sm:text-base tracking-wide text-[#FFF8EE] group-hover:text-[#F5C451] transition-colors">
-              Morgans Gate
+            <span className="font-sans font-bold text-sm sm:text-base tracking-wide text-[#FFF8EE] group-hover:text-[#F5C451] transition-colors text-left sm:text-center">
+              Opposite Palamar Garden, Mangalore Club Road
             </span>
           </div>
 

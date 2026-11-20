@@ -75,7 +75,8 @@ export const POSTER_MENU = {
       { name: "Egg Bonda", price: 10, unit: "/ piece" },
       { name: "Chilli Bajji", price: 10, unit: "/ piece" },
       { name: "Kai Pola", price: 40 },
-      { name: "Kanthari", price: 20 },
+      { name: "Kanthari(Half)", price: 10 },
+      { name: "Kanthari(Full)", price: 20 },
       { name: "Pakoda", price: 30, unit: "/ plate" },
       { name: "Sweet Potato Bajji", price: 30, unit: "/ plate" },
     ]
