@@ -3,14 +3,14 @@ import { MapPin } from 'lucide-react';
 
 export const PosterFooter = () => {
   return (
-    <footer className="mt-8 bg-gradient-to-b from-[#23120A] to-[#170C06] text-white border-t-2 border-[#D97706] shadow-2xl">
+    <footer className="mt-8 bg-gradient-to-b from-[#23120A] to-[#170C06] text-white border-t-2 border-[#D97706] shadow-2xl overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-10 pb-8">
-
+        
         {/* Malluz Cafe Logo in Footer */}
         <div className="flex justify-center mb-4">
-          <img
-            src="/malluz-cafe-logo.png"
-            alt="Malluz Cafe"
+          <img 
+            src="/malluz-cafe-logo.png" 
+            alt="Malluz Cafe" 
             className="h-12 sm:h-14 w-auto object-contain drop-shadow-md"
             width="200"
             height="100"
@@ -33,45 +33,45 @@ export const PosterFooter = () => {
           </p>
         </div>
 
-        {/* Outlets List */}
-        <div className="max-w-4xl mx-auto flex flex-wrap items-center justify-center gap-x-4 gap-y-2.5 text-center pb-8 text-[#FFF8EE]">
-
+        {/* Outlets List (Stacked cleanly on mobile, inline with dividers on desktop) */}
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row md:flex-wrap items-center md:justify-center gap-y-3.5 gap-x-5 pb-8 text-[#FFF8EE] px-2">
+          
           {/* Outlet 1: Jeppu */}
-          <div className="flex items-center gap-2 group">
-            <div className="w-7 h-7 rounded-full bg-[#3B190B] border border-[#E09F1F]/40 flex items-center justify-center shrink-0 shadow-sm">
+          <div className="flex items-start md:items-center gap-2.5 group max-w-full">
+            <div className="w-7 h-7 rounded-full bg-[#3B190B] border border-[#E09F1F]/40 flex items-center justify-center shrink-0 mt-0.5 md:mt-0 shadow-sm">
               <MapPin className="w-3.5 h-3.5 text-[#E09F1F] shrink-0" aria-hidden="true" />
             </div>
-            <span className="font-sans font-bold text-sm sm:text-base tracking-wide text-[#FFF8EE] group-hover:text-[#F5C451] transition-colors">
-              Opposite Jeppu Seminar, Jeppu
+            <span className="font-sans font-bold text-sm sm:text-base tracking-wide text-[#FFF8EE] group-hover:text-[#F5C451] transition-colors text-left md:text-center">
+              Opposite Jeppu Seminary, Jeppu
             </span>
           </div>
 
-          {/* Divider */}
-          <span className="hidden sm:inline-block text-[#D8C3A5]/40 font-light select-none text-base" aria-hidden="true">
+          {/* Divider (Hidden on mobile, visible on desktop) */}
+          <span className="hidden md:inline text-[#D8C3A5]/40 font-light select-none text-base" aria-hidden="true">
             |
           </span>
 
           {/* Outlet 2: Attavar */}
-          <div className="flex items-center gap-2 group">
-            <div className="w-7 h-7 rounded-full bg-[#3B190B] border border-[#E09F1F]/40 flex items-center justify-center shrink-0 shadow-sm">
+          <div className="flex items-start md:items-center gap-2.5 group max-w-full">
+            <div className="w-7 h-7 rounded-full bg-[#3B190B] border border-[#E09F1F]/40 flex items-center justify-center shrink-0 mt-0.5 md:mt-0 shadow-sm">
               <MapPin className="w-3.5 h-3.5 text-[#E09F1F] shrink-0" aria-hidden="true" />
             </div>
-            <span className="font-sans font-bold text-sm sm:text-base tracking-wide text-[#FFF8EE] group-hover:text-[#F5C451] transition-colors">
-              Opposite KMC Central Lab,Attavar
+            <span className="font-sans font-bold text-sm sm:text-base tracking-wide text-[#FFF8EE] group-hover:text-[#F5C451] transition-colors text-left md:text-center">
+              Opposite KMC Central Lab, Attavar
             </span>
           </div>
 
-          {/* Divider */}
-          <span className="hidden sm:inline-block text-[#D8C3A5]/40 font-light select-none text-base" aria-hidden="true">
+          {/* Divider (Hidden on mobile, visible on desktop) */}
+          <span className="hidden md:inline text-[#D8C3A5]/40 font-light select-none text-base" aria-hidden="true">
             |
           </span>
 
-          {/* Outlet 3: Opposite palamar garden Mangaloore club road */}
-          <div className="flex items-center gap-2 group">
-            <div className="w-7 h-7 rounded-full bg-[#3B190B] border border-[#E09F1F]/40 flex items-center justify-center shrink-0 shadow-sm">
+          {/* Outlet 3: Opposite Palamar Garden, Mangalore Club Road */}
+          <div className="flex items-start md:items-center gap-2.5 group max-w-full">
+            <div className="w-7 h-7 rounded-full bg-[#3B190B] border border-[#E09F1F]/40 flex items-center justify-center shrink-0 mt-0.5 md:mt-0 shadow-sm">
               <MapPin className="w-3.5 h-3.5 text-[#E09F1F] shrink-0" aria-hidden="true" />
             </div>
-            <span className="font-sans font-bold text-sm sm:text-base tracking-wide text-[#FFF8EE] group-hover:text-[#F5C451] transition-colors text-left sm:text-center">
+            <span className="font-sans font-bold text-sm sm:text-base tracking-wide text-[#FFF8EE] group-hover:text-[#F5C451] transition-colors text-left md:text-center">
               Opposite Palamar Garden, Mangalore Club Road
             </span>
           </div>
