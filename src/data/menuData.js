@@ -1,13 +1,3 @@
-export const POSTER_MENU_CATEGORIES = [
-  "All",
-  "Hot Beverages",
-  "Breakfast & Meals",
-  "Snacks & Fritters",
-  "Juices & Coolers",
-  "Burgers, Rolls & Specials",
-  "Water & Essentials"
-];
-
 export const POSTER_MENU = {
   hotBeverages: {
     id: "hot-beverages",
@@ -21,7 +11,7 @@ export const POSTER_MENU = {
       { name: "Black Tea", price: 15 },
       { name: "Black Coffee", price: 15 },
       { name: "Mint Tea", price: 15 },
-      { name: "Chukk Kaapi", price: 20 },
+      { name: "Chukku Kaapi", price: 20 },
       { name: "Lime Tea", price: 15 },
       { name: "Milk", price: 20 },
     ]
@@ -33,7 +23,7 @@ export const POSTER_MENU = {
     items: [
       { name: "Grape Juice", price: 50 },
       { name: "Mango Lassi", price: 50 },
-      { name: "Watermeion Juice", price: 40 },
+      { name: "Watermelon Juice", price: 40 },
       { name: "Punarpuli Juice", price: 20 },
       { name: "Fresh Lime Juice", price: 30 },
       { name: "Lime Soda (Sweet)", price: 30 },
@@ -57,7 +47,7 @@ export const POSTER_MENU = {
     items: [
       { name: "Puttu", price: 40 },
       { name: "Kadala Curry", price: 40 },
-      { name: "Pulau", price: 50 },
+      { name: "Pulao", price: 50 },
     ]
   },
   snacksAndFritters: {
@@ -65,7 +55,7 @@ export const POSTER_MENU = {
     category: "Snacks & Fritters",
     headerTitle: "SNACKS & FRITTERS",
     col1: [
-      { name: "Goilbajji", price: 30 },
+      { name: "Golibajji", price: 30 },
       { name: "Pathiri", price: 15 },
       { name: "Elayada", price: 20 },
       { name: "Kalthappam", price: 25 },
@@ -74,16 +64,16 @@ export const POSTER_MENU = {
       { name: "Egg Samosa", price: 20 },
       { name: "Chicken Samosa", price: 25 },
       { name: "Pazham Pori", price: 15 },
-      { name: "Chickem Cutlet", price: 20 },
-      { name: "Pazham Narachadh", price: 30 },
+      { name: "Chicken Cutlet", price: 20 },
+      { name: "Pazham Nirachath", price: 30 },
     ],
     col2: [
       { name: "Parippu Vada", price: 15 },
-      { name: "Pazham Narach Poriclandn", price: 20 },
+      { name: "Pazham Nirach Porichath", price: 20 },
       { name: "Ulli Vada", price: 15 },
       { name: "Egg Masala", price: 20 },
-      { name: "Egg Bond", price: 10, unit: "/ piece" },
-      { name: "Chilly Bajji", price: 10, unit: "/ piece" },
+      { name: "Egg Bonda", price: 10, unit: "/ piece" },
+      { name: "Chilli Bajji", price: 10, unit: "/ piece" },
       { name: "Kai Pola", price: 40 },
       { name: "Kanthari", price: 20 },
       { name: "Pakoda", price: 30, unit: "/ plate" },

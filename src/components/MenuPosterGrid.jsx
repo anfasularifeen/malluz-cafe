@@ -4,21 +4,21 @@ import { POSTER_MENU } from '../data/menuData';
 
 // Solid rich dark brown category header bar (#4E2412) with crisp white text and white icons
 const HeaderBar = ({ title, icon: Icon }) => (
-  <div className="bg-[#4E2412] text-white rounded-full px-4 py-2 flex items-center justify-center gap-2 shadow-md border border-[#3B190B] mb-3">
-    {Icon && <Icon className="w-4 h-4 text-white" />}
+  <header className="bg-[#4E2412] text-white rounded-full px-4 py-2 flex items-center justify-center gap-2 shadow-md border border-[#3B190B] mb-3">
+    {Icon && <Icon className="w-4 h-4 text-[#F5C451]" aria-hidden="true" />}
     <h3 className="font-sans font-extrabold text-xs sm:text-sm tracking-wider uppercase text-white">
       {title}
     </h3>
-  </div>
+  </header>
 );
 
-// High-contrast item row with right-aligned price
+// High-contrast item row with right-aligned price and accessible label
 const MenuItemRow = ({ name, price, unit }) => (
-  <div className="flex items-baseline justify-between py-1.5 px-1 border-b border-[#E8DFC8] last:border-b-0 hover:bg-[#F3EAD8]/60 rounded transition-colors group">
+  <li className="flex items-baseline justify-between py-1.5 px-1 border-b border-[#E8DFC8] last:border-b-0 hover:bg-[#F3EAD8]/60 rounded transition-colors group">
     <span className="text-xs sm:text-[13px] font-semibold text-[#23120A] tracking-tight group-hover:text-[#4E2412]">
       {name}
     </span>
-    <div className="flex items-baseline gap-0.5 shrink-0 pl-2">
+    <div className="flex items-baseline gap-0.5 shrink-0 pl-2" aria-label={`${price} Rupees ${unit || ''}`}>
       <span className="font-sans font-bold text-xs sm:text-[13px] text-[#23120A]">
         ₹{price}
       </span>
@@ -28,7 +28,7 @@ const MenuItemRow = ({ name, price, unit }) => (
         </span>
       )}
     </div>
-  </div>
+  </li>
 );
 
 export const MenuPosterGrid = () => {
@@ -49,48 +49,50 @@ export const MenuPosterGrid = () => {
         <div className="space-y-6">
           
           {/* 1. Hot Beverages (10 items) */}
-          <div className="bg-[#FFFDF9] rounded-2xl p-4 sm:p-5 border border-[#D8C7B0] shadow-sm">
+          <section aria-labelledby="heading-hot-beverages" className="bg-[#FFFDF9] rounded-2xl p-4 sm:p-5 border border-[#D8C7B0] shadow-sm">
             <HeaderBar title="HOT BEVERAGES" icon={Coffee} />
-            <div className="space-y-0.5">
+            <ul className="space-y-0.5" id="heading-hot-beverages">
               {hotDrinks.map((item, idx) => (
                 <MenuItemRow key={idx} name={item.name} price={item.price} />
               ))}
-            </div>
-          </div>
+            </ul>
+          </section>
 
           {/* 2. Juices & Coolers (8 items) */}
-          <div className="bg-[#FFFDF9] rounded-2xl p-4 sm:p-5 border border-[#D8C7B0] shadow-sm">
+          <section aria-labelledby="heading-juices" className="bg-[#FFFDF9] rounded-2xl p-4 sm:p-5 border border-[#D8C7B0] shadow-sm">
             <HeaderBar title="JUICES & COOLERS" icon={CupSoda} />
-            <div className="space-y-0.5">
+            <ul className="space-y-0.5" id="heading-juices">
               {juices.map((item, idx) => (
                 <MenuItemRow key={idx} name={item.name} price={item.price} />
               ))}
-            </div>
-          </div>
+            </ul>
+          </section>
 
           {/* 3. Water & Essentials (2 items) */}
-          <div className="bg-[#FFFDF9] rounded-2xl p-4 sm:p-5 border border-[#D8C7B0] shadow-sm">
+          <section aria-labelledby="heading-water" className="bg-[#FFFDF9] rounded-2xl p-4 sm:p-5 border border-[#D8C7B0] shadow-sm">
             <HeaderBar title="WATER & ESSENTIALS" icon={Droplets} />
-            <div className="space-y-0.5">
+            <ul className="space-y-0.5" id="heading-water">
               {water.map((item, idx) => (
                 <MenuItemRow key={idx} name={item.name} price={item.price} />
               ))}
-            </div>
-          </div>
+            </ul>
+          </section>
 
           {/* 4. Bottom-Left Visual Accent: Fresh Fruit Juice Photo */}
-          <div className="relative rounded-2xl overflow-hidden border border-[#D8C7B0] shadow-md bg-white p-2">
+          <div className="rounded-2xl overflow-hidden border border-[#D8C7B0] shadow-md bg-gradient-to-br from-amber-50 to-[#F5E6D3] p-2">
             <div className="h-44 sm:h-52 rounded-xl overflow-hidden relative">
               <img
                 src="https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=600&q=80"
-                alt="Fresh Kerala Fruit Coolers & Juices"
+                alt="Fresh Kerala Fruit Juices & Coolers"
                 className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="300"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#23120A]/70 via-transparent to-transparent flex items-end p-3">
-                <span className="text-white text-xs font-bold tracking-wider uppercase bg-[#4E2412]/90 backdrop-blur-sm px-3 py-1 rounded-md border border-white/20">
-                  Freshly Squeezed Juices & Coolers
-                </span>
-              </div>
             </div>
           </div>
 
@@ -100,88 +102,96 @@ export const MenuPosterGrid = () => {
         {/* ======================= RIGHT COLUMN ======================= */}
         <div className="space-y-6">
 
-          {/* 1. Breakfast & Meals (3 items paired with clear South Indian / Puttu Kadala Curry photo) */}
-          <div className="bg-[#FFFDF9] rounded-2xl p-4 sm:p-5 border border-[#D8C7B0] shadow-sm">
+          {/* 1. Breakfast & Meals (3 items paired with authentic South Indian breakfast photo) */}
+          <section aria-labelledby="heading-breakfast" className="bg-[#FFFDF9] rounded-2xl p-4 sm:p-5 border border-[#D8C7B0] shadow-sm">
             <HeaderBar title="BREAKFAST & MEALS" icon={UtensilsCrossed} />
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center">
               {/* Left side: Items */}
-              <div className="space-y-1">
+              <ul className="space-y-1" id="heading-breakfast">
                 {breakfast.map((item, idx) => (
                   <MenuItemRow key={idx} name={item.name} price={item.price} />
                 ))}
-              </div>
+              </ul>
 
-              {/* Right side: Clear South Indian Puttu & Curry Breakfast Photo */}
-              <div className="rounded-xl overflow-hidden border border-[#D8C7B0] shadow-sm h-32 sm:h-36 relative bg-amber-50">
+              {/* Right side: Kerala Breakfast Photo */}
+              <div className="rounded-xl overflow-hidden border border-[#D8C7B0] shadow-sm h-32 sm:h-36 relative bg-gradient-to-br from-amber-50 to-[#F5E6D3]">
                 <img
                   src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80"
                   alt="Authentic Kerala Puttu & Kadala Curry Breakfast"
                   className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="250"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }}
                 />
-                <div className="absolute bottom-1 right-1 bg-[#4E2412]/90 text-[10px] text-white font-bold px-2 py-0.5 rounded backdrop-blur-xs">
-                  Kerala Breakfast
-                </div>
               </div>
             </div>
-          </div>
+          </section>
 
           {/* 2. Snacks & Fritters (21 items: Two sub-columns with vertical divider) */}
-          <div className="bg-[#FFFDF9] rounded-2xl p-4 sm:p-5 border border-[#D8C7B0] shadow-sm">
+          <section aria-labelledby="heading-snacks" className="bg-[#FFFDF9] rounded-2xl p-4 sm:p-5 border border-[#D8C7B0] shadow-sm">
             <HeaderBar title="SNACKS & FRITTERS" icon={Cookie} />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 divide-y sm:divide-y-0 sm:divide-x divide-[#E8DFC8]">
               {/* Sub-column 1 (11 items) */}
-              <div className="space-y-0.5 pb-2 sm:pb-0 sm:pr-2">
+              <ul className="space-y-0.5 pb-2 sm:pb-0 sm:pr-2" id="heading-snacks">
                 {snacksCol1.map((item, idx) => (
                   <MenuItemRow key={idx} name={item.name} price={item.price} />
                 ))}
-              </div>
+              </ul>
 
               {/* Sub-column 2 (10 items) */}
-              <div className="space-y-0.5 pt-2 sm:pt-0 sm:pl-3">
+              <ul className="space-y-0.5 pt-2 sm:pt-0 sm:pl-3">
                 {snacksCol2.map((item, idx) => (
                   <MenuItemRow key={idx} name={item.name} price={item.price} unit={item.unit} />
                 ))}
-              </div>
+              </ul>
             </div>
-          </div>
+          </section>
 
           {/* 3. Burgers, Rolls & Specials (7 items: Two sub-columns + Burger photo on right) */}
-          <div className="bg-[#FFFDF9] rounded-2xl p-4 sm:p-5 border border-[#D8C7B0] shadow-sm">
+          <section aria-labelledby="heading-burgers" className="bg-[#FFFDF9] rounded-2xl p-4 sm:p-5 border border-[#D8C7B0] shadow-sm">
             <HeaderBar title="BURGERS, ROLLS & SPECIALS" icon={Sandwich} />
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 items-center">
               {/* 2 Sub-columns of Items */}
-              <div className="sm:col-span-2 grid grid-cols-1 xs:grid-cols-2 gap-x-3 divide-y xs:divide-y-0 xs:divide-x divide-[#E8DFC8]">
+              <div className="sm:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-x-3 divide-y sm:divide-y-0 sm:divide-x divide-[#E8DFC8]">
                 {/* Sub-list 1 (4 items) */}
-                <div className="space-y-0.5 pb-1 xs:pb-0 xs:pr-2">
+                <ul className="space-y-0.5 pb-1 sm:pb-0 sm:pr-2" id="heading-burgers">
                   {burgersCol1.map((item, idx) => (
                     <MenuItemRow key={idx} name={item.name} price={item.price} />
                   ))}
-                </div>
+                </ul>
 
                 {/* Sub-list 2 (3 items) */}
-                <div className="space-y-0.5 pt-1 xs:pt-0 xs:pl-2">
+                <ul className="space-y-0.5 pt-1 sm:pt-0 sm:pl-2">
                   {burgersCol2.map((item, idx) => (
                     <MenuItemRow key={idx} name={item.name} price={item.price} />
                   ))}
-                </div>
+                </ul>
               </div>
 
               {/* Right side: Crispy Chicken Burger Photo Frame */}
-              <div className="rounded-xl overflow-hidden border border-[#D8C7B0] shadow-sm h-28 sm:h-36 relative bg-amber-50">
+              <div className="rounded-xl overflow-hidden border border-[#D8C7B0] shadow-sm h-28 sm:h-36 relative bg-gradient-to-br from-amber-50 to-[#F5E6D3]">
                 <img
                   src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80"
                   alt="Crispy Malabar Chicken Burger"
                   className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                  decoding="async"
+                  width="300"
+                  height="200"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }}
                 />
-                <div className="absolute bottom-1 right-1 bg-[#4E2412]/90 text-[10px] text-white font-bold px-2 py-0.5 rounded backdrop-blur-xs">
-                  Crispy Burger
-                </div>
               </div>
             </div>
-          </div>
+          </section>
 
         </div>
 

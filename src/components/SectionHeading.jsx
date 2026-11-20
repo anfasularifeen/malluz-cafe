@@ -4,18 +4,17 @@ export const SectionHeading = () => {
   return (
     <div className="pt-8 pb-4 px-4 text-center">
       <div className="max-w-md mx-auto flex items-center justify-center gap-4">
-        <span className="h-[1.5px] bg-gradient-to-r from-transparent via-cafe-bar to-cafe-bar flex-1 opacity-60" />
-        <h2 className="font-script text-3xl sm:text-4xl text-cafe-title tracking-wide shrink-0">
+        <span className="h-px bg-[#4E2412]/50 flex-1" />
+        <h2 className="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-[#2B160E] tracking-wider uppercase shrink-0">
           Our Menu
         </h2>
-        <span className="h-[1.5px] bg-gradient-to-l from-transparent via-cafe-bar to-cafe-bar flex-1 opacity-60" />
+        <span className="h-px bg-[#4E2412]/50 flex-1" />
       </div>
-      <p className="text-xs text-cafe-muted font-sans font-medium mt-1 tracking-wider uppercase">
-        Traditional Taste & Quality
+      <p className="text-xs text-[#6E5C4E] font-sans font-semibold mt-1 tracking-widest uppercase">
+        Traditional Malabar Taste & Quality
       </p>
     </div>
   );
 };
 
 export default SectionHeading;
-
