@@ -23,7 +23,7 @@ export const HeroBanner = () => {
           </div>
 
           {/* Subtitle in Warm Gold (#F5C451) */}
-          <p className="font-sans text-xs sm:text-sm font-extrabold text-[#F5C451] tracking-[0.25em] uppercase drop-shadow-sm">
+          <p translate="no" className="notranslate font-sans text-xs sm:text-sm font-extrabold text-[#F5C451] tracking-[0.25em] uppercase drop-shadow-sm">
             TEA • COFFEE • SNACKS • MORE
           </p>
 

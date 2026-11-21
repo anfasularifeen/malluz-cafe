@@ -34,14 +34,14 @@ export const PosterFooter = () => {
         </div>
 
         {/* Outlets List (Stacked cleanly on mobile, inline with dividers on desktop) */}
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row md:flex-wrap items-center md:justify-center gap-y-3.5 gap-x-5 pb-8 text-[#FFF8EE] px-2">
+        <div translate="no" className="notranslate max-w-5xl mx-auto flex flex-col md:flex-row md:flex-wrap items-center md:justify-center gap-y-3.5 gap-x-5 pb-8 text-[#FFF8EE] px-2">
           
           {/* Outlet 1: Jeppu */}
           <div className="flex items-start md:items-center gap-2.5 group max-w-full">
             <div className="w-7 h-7 rounded-full bg-[#3B190B] border border-[#E09F1F]/40 flex items-center justify-center shrink-0 mt-0.5 md:mt-0 shadow-sm">
               <MapPin className="w-3.5 h-3.5 text-[#E09F1F] shrink-0" aria-hidden="true" />
             </div>
-            <span className="font-sans font-bold text-sm sm:text-base tracking-wide text-[#FFF8EE] group-hover:text-[#F5C451] transition-colors text-left md:text-center">
+            <span translate="no" className="notranslate font-sans font-bold text-sm sm:text-base tracking-wide text-[#FFF8EE] group-hover:text-[#F5C451] transition-colors text-left md:text-center">
               Opposite Jeppu Seminary, Jeppu
             </span>
           </div>
@@ -56,7 +56,7 @@ export const PosterFooter = () => {
             <div className="w-7 h-7 rounded-full bg-[#3B190B] border border-[#E09F1F]/40 flex items-center justify-center shrink-0 mt-0.5 md:mt-0 shadow-sm">
               <MapPin className="w-3.5 h-3.5 text-[#E09F1F] shrink-0" aria-hidden="true" />
             </div>
-            <span className="font-sans font-bold text-sm sm:text-base tracking-wide text-[#FFF8EE] group-hover:text-[#F5C451] transition-colors text-left md:text-center">
+            <span translate="no" className="notranslate font-sans font-bold text-sm sm:text-base tracking-wide text-[#FFF8EE] group-hover:text-[#F5C451] transition-colors text-left md:text-center">
               Opposite KMC Central Lab, Attavar
             </span>
           </div>
@@ -71,7 +71,7 @@ export const PosterFooter = () => {
             <div className="w-7 h-7 rounded-full bg-[#3B190B] border border-[#E09F1F]/40 flex items-center justify-center shrink-0 mt-0.5 md:mt-0 shadow-sm">
               <MapPin className="w-3.5 h-3.5 text-[#E09F1F] shrink-0" aria-hidden="true" />
             </div>
-            <span className="font-sans font-bold text-sm sm:text-base tracking-wide text-[#FFF8EE] group-hover:text-[#F5C451] transition-colors text-left md:text-center">
+            <span translate="no" className="notranslate font-sans font-bold text-sm sm:text-base tracking-wide text-[#FFF8EE] group-hover:text-[#F5C451] transition-colors text-left md:text-center">
               Opposite Palamar Garden, Mangalore Club Road
             </span>
           </div>

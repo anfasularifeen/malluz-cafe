@@ -15,7 +15,7 @@ export function App() {
         <SectionHeading />
 
         {/* 3. Pure Uninterrupted Two-Column Poster Menu (All 51 Items) */}
-        <main>
+        <main translate="no" className="notranslate">
           <MenuPosterGrid />
         </main>
       </div>

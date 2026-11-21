@@ -6,7 +6,7 @@ import { POSTER_MENU } from '../data/menuData';
 const HeaderBar = ({ title, icon: Icon }) => (
   <header className="bg-[#4E2412] text-white rounded-full px-4 py-2 flex items-center justify-center gap-2 shadow-md border border-[#3B190B] mb-3">
     {Icon && <Icon className="w-4 h-4 text-[#F5C451]" aria-hidden="true" />}
-    <h3 className="font-sans font-extrabold text-xs sm:text-sm tracking-wider uppercase text-white">
+    <h3 translate="no" className="notranslate font-sans font-extrabold text-xs sm:text-sm tracking-wider uppercase text-white">
       {title}
     </h3>
   </header>
@@ -15,15 +15,15 @@ const HeaderBar = ({ title, icon: Icon }) => (
 // High-contrast item row with right-aligned price and accessible label
 const MenuItemRow = ({ name, price, unit }) => (
   <li className="flex items-baseline justify-between py-1.5 px-1 border-b border-[#E8DFC8] last:border-b-0 hover:bg-[#F3EAD8]/60 rounded transition-colors group">
-    <span className="text-xs sm:text-[13px] font-semibold text-[#23120A] tracking-tight group-hover:text-[#4E2412]">
+    <span translate="no" className="notranslate text-xs sm:text-[13px] font-semibold text-[#23120A] tracking-tight group-hover:text-[#4E2412]">
       {name}
     </span>
-    <div className="flex items-baseline gap-0.5 shrink-0 pl-2" aria-label={`${price} Rupees ${unit || ''}`}>
-      <span className="font-sans font-bold text-xs sm:text-[13px] text-[#23120A]">
+    <div translate="no" className="notranslate flex items-baseline gap-0.5 shrink-0 pl-2" aria-label={`${price} Rupees ${unit || ''}`}>
+      <span translate="no" className="notranslate font-sans font-bold text-xs sm:text-[13px] text-[#23120A]">
         ₹{price}
       </span>
       {unit && (
-        <span className="text-[10px] text-[#6E5C4E] font-medium">
+        <span translate="no" className="notranslate text-[10px] text-[#6E5C4E] font-medium">
           {unit}
         </span>
       )}
