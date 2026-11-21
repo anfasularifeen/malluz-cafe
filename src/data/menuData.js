@@ -64,7 +64,7 @@ export const POSTER_MENU = {
       { name: "Egg Samosa", price: 20 },
       { name: "Chicken Samosa", price: 25 },
       { name: "Pazham Pori", price: 15 },
-      { name: "Chicken Cutlet", price: 20 },
+      { name: "Chicken Cutlet", price: 25 },
       { name: "Pazham Nirachath", price: 30 },
     ],
     col2: [
